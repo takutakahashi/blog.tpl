@@ -1,0 +1,119 @@
+baseURL: https://BLOG_URL/
+theme: thistheme
+title: BLOG_TITLE
+defaultContentLanguage: en  # en/zh/...
+footnoteReturnLinkContents: ↩
+hasCJKLanguage: true
+paginate: 7
+enableEmoji: true
+googleAnalytics: "BLOG_GA"
+permalinks:
+  posts: /:filename/
+
+taxonomies:
+    category : categories
+    tag : tags
+    series : series
+outputFormats:          # use for search. recommend not to modify 
+  SearchIndex:
+    mediaType: "application/json"
+    baseName: "searchindex"
+    isPlainText: true
+    notAlternative: true
+    
+outputs:
+    home: ["HTML","RSS","SearchIndex"]  # recommend not to modify
+# sitemap
+sitemap:
+  changefreq: weekly
+  filename: sitemap.xml
+  priority: 0.5
+
+menu:
+  main:
+    - identifier: home
+      name: Home
+      title: Home 
+      url: /
+      weight: 1
+
+    - identifier: archives
+      name: Archives
+      title: Archives
+      url: /posts
+      weight: 2
+
+    - identifier: about
+      name: About
+      title: About
+      url: https://github.com/takutakahashi/whoami
+      weight: 5
+
+params:
+  since: 2019
+  dateFormatToUse: "2006-01-02"
+  enablePostCopyright: false
+  # the directory under content folder that you want to render
+  mainSections: ["posts"]
+  # Enable/Disable menu icons
+  # Icon Reference: http://blog.cofess.com/hexo-theme-pure/iconfont/demo_fontclass.html
+  enableMathJax: true #Enable mathjax support, to use mathematical notations
+  highlightjs:
+    langs: ["python", "javascript", "go"] # refer to http://staticfile.org/, search highlight.js, already have highlight.min.js
+    
+  menuIcons:
+    enable: true
+    home: icon-home-fill
+    archives: icon-archives-fill
+    about: icon-cup-fill
+
+  # profile
+  profile:
+    enabled: true # Whether to show profile bar
+    avatar: avatar.jpg
+    author: takutakahashi.dev
+    author_title: Software, Infrastructure, etc.
+    author_description: Software, Infrastructure Enginner @ GMO Peapbo, Inc
+    location: Japan
+    follow: https://github.com/takutakahashi
+    # Social Links
+    social:
+      links:
+        github: https://github.com/takutakahashi
+        twitter: https://twitter.com/takutaka1220
+        rss: /index.xml
+      link_tooltip: false # enable the social link tooltip, options: true, false
+  # Site
+  site:
+    logo:
+      enabled: true
+      width: 40
+      height: 40
+      url: favicon.ico
+    title: Hugo
+    favicon: favicon.ico
+
+  # wordcount
+  postCount:
+    enable: true
+    wordcount: true
+    min2read: true
+
+  # config
+  config:
+    skin: # theme color default is white. other type [theme-black,theme-blue,theme-green,theme-purple]
+    layout: main-center # main-left main-center main-right
+    excerpt_link: Read More
+    toc: false
+
+  # Sidebar
+  sidebar: right
+
+  # Search
+  search:
+    enable: true # enable search. thanks for https://raw.githubusercontent.com/ppoffice/hexo-theme-icarus/master/source/js/insight.js
+
+  # Sidebar only the following widgets. you can remove any you don't like it.
+  widgets:
+    - recent_posts
+
