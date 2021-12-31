@@ -1,4 +1,4 @@
-FROM takutakahashi/notion-tpl
+FROM ghcr.io/takutakahashi/notion-tpl:v0.1.0
 
 WORKDIR /src/
 RUN apt update && apt install -y git wget \
